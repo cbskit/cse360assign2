@@ -12,43 +12,56 @@ public class Calculator {
 	private int total;
 	
 	public Calculator () {
-		total = 0;  // not needed - included for clarity
+
 	}
 	
+	/*
+	 * getTotal shall return the current total
+	 * 
+	 */
+	
 	public int getTotal () {
-		return 0;
+		
+		return total;
 	}
 	
 	/* @param value
-	 * The add method should add the
+	 * The add method shall add the
 	 * parameter to the total variable
 	 */
 	public void add (int value) {
-		
+		total=value+total;
+
 	}
 	
 	/* @param value
-	 * The subtract method should subtract
+	 * The subtract method shall subtract
 	 * the parameter to the total variable
 	 */
 	public void subtract (int value) {
-		
+		total=total-value;
 	}
 	
 	/* @param value
-	 * The multiply method should multiply the
+	 * The multiply method shall multiply the
 	 * total by the parameter
 	 */
 	public void multiply (int value) {
-		
+		total=total*value;
 	}
 	
 	/* @param value
-	 * The divide method should divide the
-	 * total by the parameter.
+	 * The divide method shall divide the
+	 * total by the parameter. If paramater
+	 * is zero then set total to zero.
 	 */
 	public void divide (int value) {
-		
+			if (value !=0 ){
+				total=total/value;
+			}
+			else {
+				total=0;
+			}
 	}
 	
 	/* 
