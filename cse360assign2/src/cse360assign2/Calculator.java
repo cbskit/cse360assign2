@@ -1,6 +1,6 @@
 /*
  *@Author: Chad Snyder
- *@Date:   02/21/2018
+ *@Date:   02/21/2019
  * Class:  CSE360
  * ID:     553
  */
@@ -10,9 +10,12 @@ package cse360assign2;
 public class Calculator {
 
 	private int total;
+	private StringBuffer getHistory;
 	
 	public Calculator () {
-
+		// initialize buffer and set initial content to 0 for first
+		// return value of history.
+		getHistory = new StringBuffer("0");
 	}
 	
 	/*
@@ -21,7 +24,6 @@ public class Calculator {
 	 */
 	
 	public int getTotal () {
-		
 		return total;
 	}
 	
@@ -31,7 +33,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total=value+total;
-
+		getHistory.append(" + "+value);
 	}
 	
 	/* @param value
@@ -40,6 +42,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total=total-value;
+		getHistory.append(" - "+value);
 	}
 	
 	/* @param value
@@ -48,6 +51,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total=total*value;
+		getHistory.append(" * "+value);
 	}
 	
 	/* @param value
@@ -58,6 +62,7 @@ public class Calculator {
 	public void divide (int value) {
 			if (value !=0 ){
 				total=total/value;
+				getHistory.append(" / "+value);
 			}
 			else {
 				total=0;
@@ -67,9 +72,12 @@ public class Calculator {
 	/* 
 	 * @param
 	 * @return string
-	 * 
+	 * getHistory shall return a string of all operations
+	 * performed and separate operations and values with
+	 * a space.
 	 */
 	public String getHistory () {
-		return "";
+		
+		return getHistory.toString();
+		}
 	}
-}
